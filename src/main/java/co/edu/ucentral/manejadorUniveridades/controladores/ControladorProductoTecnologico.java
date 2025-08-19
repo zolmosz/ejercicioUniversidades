@@ -19,7 +19,7 @@ public class ControladorProductoTecnologico {
     @Autowired
     private ServicioProductoTecnologico servicioProductoTecnologico;
 
-    @PostMapping("/")
+    @PostMapping("/post")
     public void crear(@RequestBody ProductoTecnologico productoTecnologico){this.servicioProductoTecnologico.registrar(productoTecnologico);}
 
     @DeleteMapping("/{codigo}")
@@ -27,7 +27,7 @@ public class ControladorProductoTecnologico {
             return "ok";
     }
 
-    @GetMapping("/")
+    @GetMapping("/get")
     public List<ProductoTecnologico> consultar(){
         return this.servicioProductoTecnologico.consultarTodos();
     }
